@@ -1,0 +1,5 @@
+C:\Users\HP\Desktop\RVA projekat\OnlineDoktor\Common\bin\Debug\Common.dll
+C:\Users\HP\Desktop\RVA projekat\OnlineDoktor\Common\bin\Debug\Common.pdb
+C:\Users\HP\Desktop\RVA projekat\OnlineDoktor\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\RVA projekat\OnlineDoktor\Common\obj\Debug\Common.dll
+C:\Users\HP\Desktop\RVA projekat\OnlineDoktor\Common\obj\Debug\Common.pdb

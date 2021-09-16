@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E13E333-A49D-42FB-97D3-7C3A68C926B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandInterfaces\DoctorInterfaces\IAddDoctorCommand.cs" />
+    <Compile Include="CommandInterfaces\DoctorInterfaces\IGetDoctorsCommand.cs" />
+    <Compile Include="CommandInterfaces\DoctorInterfaces\IRemoveDoctorCommand.cs" />
+    <Compile Include="CommandInterfaces\DoctorInterfaces\ISearchDoctorsCommand.cs" />
+    <Compile Include="CommandInterfaces\DoctorInterfaces\IUpdateDoctorCommand.cs" />
+    <Compile Include="CommandInterfaces\ExaminationInterfaces\IAddExaminationCommand.cs" />
+    <Compile Include="CommandInterfaces\ExaminationInterfaces\IRemoveExaminationCommand.cs" />
+    <Compile Include="CommandInterfaces\ExaminationInterfaces\IRetrieveAllExaminations.cs" />
+    <Compile Include="CommandInterfaces\ExaminationInterfaces\IRetrieveExaminationCommand.cs" />
+    <Compile Include="CommandInterfaces\ExaminationInterfaces\ISearchExaminationCommand.cs" />
+    <Compile Include="CommandInterfaces\ExaminationInterfaces\IUpdateExaminationCommand.cs" />
+    <Compile Include="CommandInterfaces\PatientInterfaces\IAddPatientCommand.cs" />
+    <Compile Include="CommandInterfaces\PatientInterfaces\ICheckPatientExistanceCommand.cs" />
+    <Compile Include="AllDbContext.cs" />
+    <Compile Include="CommandInterfaces\PatientInterfaces\IGetPatientsCommand.cs" />
+    <Compile Include="CommandInterfaces\PatientInterfaces\IRemovePatientCommand.cs" />
+    <Compile Include="CommandInterfaces\PatientInterfaces\ISearchPatientsCommand.cs" />
+    <Compile Include="CommandInterfaces\PatientInterfaces\IUpdatePatientCommand.cs" />
+    <Compile Include="DoctorCommands\AddDoctorCommand.cs" />
+    <Compile Include="DoctorCommands\GetDoctorsCommand.cs" />
+    <Compile Include="DoctorCommands\RemoveDoctorCommand.cs" />
+    <Compile Include="DoctorCommands\SearchDoctorsCommand.cs" />
+    <Compile Include="DoctorCommands\UpdateDoctorCommand.cs" />
+    <Compile Include="ExaminationCommands\AddExaminationCommand.cs" />
+    <Compile Include="ExaminationCommands\RemoveExaminationCommand.cs" />
+    <Compile Include="ExaminationCommands\RetrieveAllExaminationsCommand.cs" />
+    <Compile Include="ExaminationCommands\RetrieveExaminationCommand.cs" />
+    <Compile Include="ExaminationCommands\SearchExaminationCommand.cs" />
+    <Compile Include="ExaminationCommands\UpdateExaminationCommand.cs" />
+    <Compile Include="Migrations\202109101900217_CreateTables.cs" />
+    <Compile Include="Migrations\202109101900217_CreateTables.designer.cs">
+      <DependentUpon>202109101900217_CreateTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109111938321_addAdminTale.cs" />
+    <Compile Include="Migrations\202109111938321_addAdminTale.designer.cs">
+      <DependentUpon>202109111938321_addAdminTale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109112309186_newOne.cs" />
+    <Compile Include="Migrations\202109112309186_newOne.designer.cs">
+      <DependentUpon>202109112309186_newOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PatientCommands\AddPatientCommand.cs" />
+    <Compile Include="PatientCommands\GetPatientsCommand.cs" />
+    <Compile Include="PatientCommands\PatientExistanceCommand.cs" />
+    <Compile Include="PatientCommands\RemovePatientCommand.cs" />
+    <Compile Include="PatientCommands\SearchPatientsCommand.cs" />
+    <Compile Include="PatientCommands\UpdatePatientCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{416F56B9-65FF-42D8-8CD6-7589359BE529}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202109101900217_CreateTables.resx">
+      <DependentUpon>202109101900217_CreateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109111938321_addAdminTale.resx">
+      <DependentUpon>202109111938321_addAdminTale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109112309186_newOne.resx">
+      <DependentUpon>202109112309186_newOne.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

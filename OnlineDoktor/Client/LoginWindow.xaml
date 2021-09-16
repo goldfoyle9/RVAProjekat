@@ -1,0 +1,35 @@
+﻿<Window x:Class="Client.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Height="400" Width="700"
+        Title="LoginWindow">
+    <Grid Margin="0,0,0,0">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#06beb6" Offset="0"/>
+                <GradientStop Color="#48b1bf" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border BorderThickness="10" CornerRadius="12" Margin="0,2,0,-2">
+            <Border.Background>
+                <ImageBrush ImageSource="DesignMaterial/loginScreen.png"/>
+            </Border.Background>
+            <Border Margin="374,37,36,79" CornerRadius="12" Background="White">
+                <Label Content="Dobrodošli!" Margin="77,6,77,185" VerticalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold"/>
+            </Border>
+
+        </Border>
+
+        <TextBox x:Name="TbUsername" Text="Vaše korisničko ime" Margin="430,109,88,235" Background="#FFE2E2E2" Foreground="#FF646464">
+        </TextBox>
+        <PasswordBox x:Name="TbPassword" Password="12345678" Margin="430,152,88,190" Background="#FFE2E2E2" Foreground="#FF646464">
+        </PasswordBox>
+        <Button x:Name="LoginButton" Content="Uloguj se" HorizontalAlignment="Left" Margin="478,235,0,0" VerticalAlignment="Top" Width="78" Background="#FF068CBE" Foreground="White" Height="25" Click="LoginButton_Click"/>
+        <RadioButton x:Name="AdminRB" Margin="430,205,199,142" Content="Admin"/>
+        <RadioButton x:Name="PatientRB" Margin="523,205,88,138" Content="Pacijent" IsChecked="true"/>
+    </Grid>
+</Window>
